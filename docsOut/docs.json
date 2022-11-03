@@ -1,0 +1,10 @@
+{
+  "nav": {
+    "Mods": {
+      "DataTool": {
+        "IAdvancedData": "mods/DataTool/IAdvancedData.md",
+        "IDataExpansion": "mods/DataTool/IDataExpansion.md"
+      }
+    }
+  }
+}

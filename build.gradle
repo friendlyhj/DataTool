@@ -112,6 +112,11 @@ dependencies {
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
     minecraft 'net.minecraftforge:forge:1.16.5-36.2.39'
 
+    annotationProcessor 'com.google.code.gson:gson:2.8.6'
+    annotationProcessor 'org.reflections:reflections:0.9.10'
+    annotationProcessor fg.deobf('com.blamejared.crafttweaker:CraftTweaker-1.16.5:7.1.2.515')
+    annotationProcessor 'com.blamejared.crafttweaker:Crafttweaker_Annotation_Processors-1.16.5:1.0.0.515'
+
     implementation fg.deobf('com.blamejared.crafttweaker:CraftTweaker-1.16.5:7.1.2.515')
     // Real mod deobf dependency examples - these get remapped to your current mappings
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api") // Adds JEI API as a compile dependency

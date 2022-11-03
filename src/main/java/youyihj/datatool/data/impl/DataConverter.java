@@ -5,15 +5,21 @@ import com.blamejared.crafttweaker.api.annotations.ZenRegister;
 import com.blamejared.crafttweaker.api.data.IData;
 import com.blamejared.crafttweaker.api.data.INumberData;
 import com.blamejared.crafttweaker.impl.data.*;
+import com.blamejared.crafttweaker_annotations.annotations.Document;
 import org.openzen.zencode.java.ZenCodeType;
 import youyihj.datatool.data.IAdvancedData;
 
 /**
+ * @docParam this (1 as IData)
  * @author youyihj
  */
 @ZenRegister
 @ZenCodeType.Expansion("crafttweaker.api.data.IData")
+@Document("mods/DataTool/IDataExpansion")
 public class DataConverter {
+    /**
+     * Coverts IData to IAdvancedData.
+     */
     @ZenCodeType.Method
     @ZenCodeType.Caster(implicit = true)
     public static IAdvancedData advance(IData data) {
