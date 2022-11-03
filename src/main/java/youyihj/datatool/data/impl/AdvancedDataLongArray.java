@@ -49,6 +49,24 @@ public class AdvancedDataLongArray extends AdvancedDataBase<LongArrayData> {
     }
 
     @Override
+    public IAdvancedData indexGet(int index) {
+        long[] longs = asLongArray();
+        if (index >= longs.length) {
+            return IAdvancedData.ABSENT;
+        } else {
+            return new AdvancedDataNumber(new LongData(longs[index]));
+        }
+    }
+
+    @Override
+    public void indexSet(int index, IAdvancedData data) {
+        long[] longs = asLongArray();
+        if (index < longs.length) {
+            longs[index] = data.asLong();
+        }
+    }
+
+    @Override
     public List<IAdvancedData> asList() {
         return data.getInternal().stream().map(LongData::new).map(AdvancedDataNumber::new).collect(Collectors.toList());
     }
