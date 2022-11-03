@@ -5,6 +5,7 @@ import com.blamejared.crafttweaker.impl.data.IntData;
 import org.apache.commons.lang3.ArrayUtils;
 import youyihj.datatool.data.IAdvancedData;
 
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -65,6 +66,10 @@ public class AdvancedDataIntArray extends AdvancedDataBase<IntArrayData> {
         return new AdvancedDataIntArray(new IntArrayData(ArrayUtils.add(asIntArray(), other.asInt())));
     }
 
+    @Override
+    public List<IAdvancedData> asList() {
+        return data.getInternal().stream().map(IntData::new).map(AdvancedDataNumber::new).collect(Collectors.toList());
+    }
 
     @Override
     public String asString() {

@@ -1,9 +1,11 @@
 package youyihj.datatool.data.impl;
 
 import com.blamejared.crafttweaker.impl.data.LongArrayData;
+import com.blamejared.crafttweaker.impl.data.LongData;
 import org.apache.commons.lang3.ArrayUtils;
 import youyihj.datatool.data.IAdvancedData;
 
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.LongStream;
 
@@ -44,6 +46,11 @@ public class AdvancedDataLongArray extends AdvancedDataBase<LongArrayData> {
     @Override
     public String asString() {
         return LongStream.of(asLongArray()).mapToObj(Long::toString).collect(Collectors.joining(", ", "[", "]"));
+    }
+
+    @Override
+    public List<IAdvancedData> asList() {
+        return data.getInternal().stream().map(LongData::new).map(AdvancedDataNumber::new).collect(Collectors.toList());
     }
 
     @Override
