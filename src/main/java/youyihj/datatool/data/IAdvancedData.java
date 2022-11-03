@@ -81,14 +81,16 @@ public interface IAdvancedData {
      * If the data doesn't handle a value
      */
     @ZenCodeType.Getter
+    @ZenCodeType.Method
     default boolean isAbsent() {
         return this == ABSENT;
     }
 
     /**
-     * If the data handle a value
+     * If the data handles a value
      */
     @ZenCodeType.Getter
+    @ZenCodeType.Method
     default boolean isPresent() {
         return this != ABSENT;
     }
@@ -288,6 +290,7 @@ public interface IAdvancedData {
      * Gets the size of this data.
      */
     @ZenCodeType.Getter
+    @ZenCodeType.Method
     default int size() {
         return 0;
     }

@@ -338,6 +338,34 @@ IAdvancedData.indexSet(index as int, data as IAdvancedData) as void
 
 :::
 
+:::group{name=isAbsent}
+
+If the data doesn't handle a value
+
+Return Type: boolean
+
+```zenscript
+// IAdvancedData.isAbsent() as boolean
+
+(1 as IData).advance().isAbsent();
+```
+
+:::
+
+:::group{name=isPresent}
+
+If the data handles a value
+
+Return Type: boolean
+
+```zenscript
+// IAdvancedData.isPresent() as boolean
+
+(1 as IData).advance().isPresent();
+```
+
+:::
+
 :::group{name=memberGet}
 
 Gets the value associated with the key. Only works for DataMap
@@ -404,6 +432,20 @@ IAdvancedData.remove(index as int) as void
 |-----------|------|-------------|
 | index | int | No Description Provided |
 
+
+:::
+
+:::group{name=size}
+
+Gets the size of this data.
+
+Return Type: int
+
+```zenscript
+// IAdvancedData.size() as int
+
+(1 as IData).advance().size();
+```
 
 :::
 
